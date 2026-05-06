@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: "Sala d'armi Marea"
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: "Scherma storica Catania — Sala d'armi Marea"
+    template: "%s — Sala d'armi Marea"
+  description: "La prima scuola di scherma storica in Sicilia. Spada medievale e rinascimentale, HEMA, CSEN, CONI. Catania, via Grasso Finocchiaro 63."
   robots:
     index: true
     follow: true
