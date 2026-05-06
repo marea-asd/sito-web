@@ -11,7 +11,7 @@ metadata:
   title:
     default: "Scherma storica Catania — Sala d'armi Marea"
     template: "%s — Sala d'armi Marea"
-  description: "La prima scuola di scherma storica in Sicilia. Spada medievale e rinascimentale, HEMA, CSEN, CONI. Catania, via Grasso Finocchiaro 63."
+  description: 'La prima scuola di scherma storica in Sicilia. Spada medievale e rinascimentale, HEMA, CSEN, CONI. Catania, via Grasso Finocchiaro 63.'
   robots:
     index: true
     follow: true
