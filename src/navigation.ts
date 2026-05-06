@@ -23,7 +23,7 @@ export const headerData = {
       href: getPermalink('/contatti'),
     },
   ],
-  actions: [{ variant: 'primary', text: 'Prenota lezione di prova', href: getPermalink('/lezione-di-prova') }],
+  actions: [{ variant: 'primary' as const, text: 'Prenota lezione di prova', href: getPermalink('/lezione-di-prova') }],
 };
 
 export const footerData = {
