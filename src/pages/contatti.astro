@@ -1,0 +1,98 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: "Contatti — Sala d'armi Marea, Catania",
+  description:
+    "Scrivici, chiamaci, o passa in sala in Via Grasso Finocchiaro 63 a Catania. Sala d'armi Marea, scuola di scherma storica medievale e rinascimentale.",
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+    <div class="max-w-3xl mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Contatti</h1>
+      <p class="text-xl text-muted dark:text-slate-400">
+        Per informazioni sui corsi, per visitare la sala, o per proposte di collaborazione — scegli il canale che
+        preferisci.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-8 md:gap-12">
+      <div class="md:col-span-2 space-y-8">
+        <div>
+          <h2 class="text-lg font-bold mb-2">Dove siamo</h2>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Via+Grasso+Finocchiaro+63+Catania"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-muted dark:text-slate-400 hover:text-primary transition"
+          >
+            <address class="not-italic">
+              Via Grasso Finocchiaro 63<br />
+              95128 Catania (CT)
+            </address>
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold mb-2">Telefono</h2>
+          <a href="tel:+393401496622" class="text-muted dark:text-slate-400 hover:text-primary transition">
+            +39 340 14 96 622
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold mb-2">Email</h2>
+          <a href="mailto:info@saladarmimarea.it" class="text-muted dark:text-slate-400 hover:text-primary transition">
+            info@saladarmimarea.it
+          </a>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-bold mb-2">Social</h2>
+          <div class="flex flex-col gap-2">
+            <a
+              href="https://www.facebook.com/SchermaStoricaCataniaReal"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted dark:text-slate-400 hover:text-primary transition"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/scherma_storica_catania_marea/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted dark:text-slate-400 hover:text-primary transition"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.youtube.com/@GiuseppePioletti"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-muted dark:text-slate-400 hover:text-primary transition"
+            >
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-3">
+        <div class="aspect-video w-full rounded-lg overflow-hidden shadow-md">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289750058024!2d15.103360611139898!3d37.52466652641178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313fd64ca27df0d%3A0x8dd72156baa02fe5!2sScherma%20Storica%20Catania%20-%20Sala%20d'armi%20Marea!5e0!3m2!1sit!2sit!4v1779377402121!5m2!1sit!2sit"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa Sala d'armi Marea su Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
