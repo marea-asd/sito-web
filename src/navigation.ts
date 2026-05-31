@@ -15,10 +15,6 @@ export const headerData = {
       href: getPermalink('/chi-siamo'),
     },
     {
-      text: 'Blog',
-      href: getBlogPermalink(),
-    },
-    {
       text: 'Contatti',
       href: getPermalink('/contatti'),
     },
