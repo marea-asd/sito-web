@@ -4,7 +4,6 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 ---
 
 <Layout>
@@ -143,26 +142,22 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <!-- CTA finale ********************* -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
+  <section class="bg-primary not-prose">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
+      <p class="font-display uppercase tracking-widest text-sm text-white mb-4">Inizia da qui</p>
+      <h2 class="font-display text-3xl md:text-4xl text-white leading-tight mb-6">Vieni a impugnare la spada</h2>
+      <p class="font-sans text-lg text-white/90 leading-relaxed mb-10">
+        La prima volta in Sala è il modo migliore per capire se la scherma storica fa per te. Lascia i contatti, ti
+        scriviamo con la prossima data utile.
+      </p>
+      <a
+        href="/lezione-di-prova"
+        class="inline-block bg-white text-primary font-semibold rounded-full px-8 py-4 hover:bg-gray-100 transition-colors"
+      >
+        Prenota la lezione di prova
+      </a>
+    </div>
+  </section>
 </Layout>
