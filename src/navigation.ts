@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -32,7 +32,6 @@ export const footerData = {
         { text: 'Home', href: getPermalink('/') },
         { text: 'Corso Base', href: getPermalink('/corso-base') },
         { text: 'Chi siamo', href: getPermalink('/chi-siamo') },
-        { text: 'Blog', href: getBlogPermalink() },
         { text: 'Contatti', href: getPermalink('/contatti') },
       ],
     },
@@ -69,5 +68,5 @@ export const footerData = {
       href: 'https://www.youtube.com/@GiuseppePioletti',
     },
   ],
-  footNote: `© 2026 Sala d'armi Marea ASD — Tutti i diritti riservati`,
+  footNote: `© 2026 Sala d'armi Marea ASD. Tutti i diritti riservati`,
 };
