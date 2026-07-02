@@ -1,0 +1,226 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: "Corso Base di scherma storica a Catania | Sala d'armi Marea",
+  description:
+    'Il Corso Base di scherma storica a Catania: sei settimane per passare dalla prima impugnatura al primo incrocio con la spada a due mani di Fiore. Per adulti, da zero.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero *************************** -->
+
+  <section class="bg-white dark:bg-black not-prose">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-6">
+        Sei settimane per trasformarti in un vero cavaliere medievale!
+      </h1>
+      <p class="font-sans text-xl text-muted dark:text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Il Corso Base è la porta d'ingresso alla nostra magnifica disciplina, l'Arte della spada. Apprenderai a muoverti
+        con una spada in mano, a usare le Poste del Trattato di Fiore dei Liberi, a portare con efficacia tagli e punte,
+        fino al tuo primo duello.
+      </p>
+      <a
+        href="/lezione-di-prova"
+        class="inline-block bg-primary text-white font-semibold rounded-full px-8 py-4 hover:opacity-90 transition-opacity"
+      >
+        Prenota la lezione di prova
+      </a>
+    </div>
+  </section>
+
+  <!-- Il Corso Base in sintesi (spec box) *** -->
+
+  <section class="bg-gray-50 dark:bg-slate-900 not-prose">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <h2
+        class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
+      >
+        Il Corso Base in sintesi
+      </h2>
+      <dl
+        class="grid grid-cols-[auto_1fr] items-baseline gap-x-4 gap-y-4 rounded-lg border border-gray-200 dark:border-slate-700 bg-white p-6 dark:bg-slate-800 sm:gap-x-6 sm:p-8"
+      >
+        <dt class="font-display uppercase tracking-wider text-xs text-primary whitespace-nowrap">Durata</dt>
+        <dd class="font-sans text-default dark:text-slate-200">6 settimane, 12 lezioni</dd>
+
+        <dt class="font-display uppercase tracking-wider text-xs text-primary whitespace-nowrap">Frequenza</dt>
+        <dd class="font-sans text-default dark:text-slate-200">2 lezioni a settimana</dd>
+
+        <dt class="font-display uppercase tracking-wider text-xs text-primary whitespace-nowrap">Durata lezione</dt>
+        <dd class="font-sans text-default dark:text-slate-200">1 ora</dd>
+
+        <dt class="font-display uppercase tracking-wider text-xs text-primary whitespace-nowrap">Argomento</dt>
+        <dd class="font-sans text-default dark:text-slate-200">la Spada a due mani di Fiore dei Liberi</dd>
+
+        <dt class="font-display uppercase tracking-wider text-xs text-primary whitespace-nowrap">Prerequisito</dt>
+        <dd class="font-sans text-default dark:text-slate-200">
+          certificato medico di idoneità all'attività sportiva non agonistica
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Cosa imparerai **************** -->
+
+  <section class="bg-white dark:bg-black not-prose">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <h2
+        class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
+      >
+        Cosa imparerai
+      </h2>
+      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+        <p>
+          Il Corso Base è un percorso completo ideale per tutti coloro che partono da zero. Sin dalla prima lezione non
+          viene dato nulla per scontato, nemmeno come si tiene una spada; alla fine delle sei settimane incroci per la
+          prima volta con un compagno, con un controllo reale del gesto.
+        </p>
+        <p>
+          Il primo passo è creare una connessione tra il corpo e la spada: l'impugnatura, la postura marziale, la
+          biomeccanica del movimento. Prima ancora di colpire imparerai a reggere la spada nel modo giusto, perché tutto
+          il resto nasce da lì. Da qui si passa al movimento, il passeggio, il modo in cui ci si sposta con equilibrio e
+          precisione.
+        </p>
+        <p>
+          Nel frattempo, inizierai ad apprendere l'Arte: le prime Poste del Trattato di Fiore dei Liberi, il Maestro su
+          cui si fonda la tradizione italiana della spada a due mani. Le Poste sono le guardie da cui nasce ogni azione,
+          le studierai direttamente dalla fonte per poi applicarle concretamente. Sulle Poste si fondano l'azione, i
+          tagli e le punte, il modo in cui la spada offende e come si costruisce un colpo che sia efficace e sicuro per
+          chi lo tira.
+        </p>
+        <p>
+          Nell'ultima parte del percorso arrivano la difesa e il confronto: le azioni difensive, lo studio pratico di
+          Tempo e Misura e l'introduzione agli Assalti liberi (lo sparring). È il momento in cui tutto quello che hai
+          costruito si mette alla prova con un compagno, con prudenza e in sicurezza.
+        </p>
+        <p>
+          Tutto questo lavoro ha un effetto sul corpo, non solo sulla tecnica. Muoversi con la spada allena la
+          coordinazione, il controllo della postura e la stabilità di core e articolazioni. Settimana dopo settimana la
+          nostra arte marziale ti aiuterà a sviluppare forza funzionale, equilibrio e resistenza. È il gesto marziale a
+          mettere in moto tutto il corpo, e impari a governarlo con precisione, stabilità, agilità e coraggio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- E dopo il Corso Base? ********* -->
+
+  <section class="bg-gray-50 dark:bg-slate-900 not-prose">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <h2
+        class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
+      >
+        E dopo il Corso Base?
+      </h2>
+      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+        <p>
+          Alla fine delle sei settimane hai consolidato le basi, ma il percorso non finisce qui: prosegue nel corso
+          regolare. La spada a due mani resta, e le si affiancano le altre discipline della tradizione, dalla spada da
+          lato del gentiluomo rinascimentale all'abrazare, la lotta medievale, fino alla daga, al pugnale, all'azza e
+          alla lancia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Come si svolge e cosa portare * -->
+
+  <section class="bg-white dark:bg-black not-prose">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <h2
+        class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
+      >
+        Come si svolge e cosa portare
+      </h2>
+      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+        <p>
+          Le lezioni si tengono nella nostra Sala in Via Grasso Finocchiaro, due volte a settimana. Ogni incontro dura
+          un'ora e alterna la spiegazione, l'esercizio guidato e la pratica.
+        </p>
+        <p>
+          Per cominciare ti serve pochissimo: vieni con un abbigliamento sportivo comodo e un paio di scarpe da
+          ginnastica.
+        </p>
+        <p>Ai simulacri pensiamo noi: le spade da allenamento le mette a disposizione la scuola.</p>
+        <p>
+          L'unico documento da preparare in anticipo è il certificato medico di idoneità all'attività sportiva non
+          agonistica (quello ludico-motorio non è sufficiente) che va presentato prima di iniziare il corso.
+        </p>
+        <p>
+          Se un domani vorrai gareggiare potrai fare liberamente anche il certificato agonistico, ma per il Corso Base
+          quello non agonistico è sufficiente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ operative ***************** -->
+
+  <FAQs
+    title="Domande frequenti"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Cosa devo portare?',
+        description:
+          'Ai simulacri pensiamo noi: le spade da allenamento le mette a disposizione la scuola. A te basta un abbigliamento sportivo comodo e un paio di scarpe da ginnastica.',
+      },
+      {
+        title: 'Serve il certificato medico?',
+        description:
+          "Sì, serve il certificato di idoneità all'attività sportiva non agonistica (oppure agonistica se preferisci). Attenzione a non richiedere quello per attività ludico-motoria, che non è valido per la nostra attività.",
+      },
+      {
+        title: 'Il certificato medico serve anche per la lezione di prova?',
+        description: 'Sì, assolutamente. Controlla che sia quello giusto e, per qualsiasi dubbio, contattaci.',
+      },
+      {
+        title: 'Per allenarsi serve un tesseramento?',
+        description:
+          "Sì, l'adesione alla Sala Marea prevede il tesseramento con CSEN, l'ente di promozione sportiva riconosciuto dal CONI. Il tesseramento vale per l'anno sportivo e comprende la copertura assicurativa per l'attività.",
+      },
+      {
+        title: 'Quanto è faticoso?',
+        description:
+          "Il corso è pensato per adulti di ogni livello di forma fisica. L'intensità si adatta al gruppo ed è calibrata da chi ha una formazione in scienze motorie e preparazione atletica. Ci si allena sul serio, ma resta alla portata di tutti.",
+      },
+      {
+        title: 'Quanto dura il Corso Base?',
+        description: "Sei settimane, con due lezioni a settimana da un'ora ciascuna.",
+      },
+      {
+        title: 'Cosa si fa nel Corso Base?',
+        description:
+          "Si studia solo la spada a due mani, la disciplina cardine di Fiore dei Liberi. Concentrare la pratica su un'unica disciplina permette di insegnare al corpo movimenti del tutto nuovi senza dispersione.",
+      },
+      {
+        title: 'Cosa succede quando completo il Corso Base?',
+        description:
+          "Si entra nel corso regolare, dove alla spada a due mani si affiancano la spada da lato, l'abrazare (la lotta medievale), la daga, il pugnale, l'azza e la lancia.",
+      },
+    ]}
+  />
+
+  <!-- CTA finale ******************** -->
+
+  <section class="bg-primary not-prose">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
+      <h2 class="font-display text-3xl md:text-4xl text-white leading-tight mb-6">Comincia da una prova gratuita.</h2>
+      <p class="font-sans text-lg text-white/90 leading-relaxed mb-10">
+        Il modo migliore per capire se la scherma storica fa per te è entrare in Sala e prendere in mano una spada. Ti
+        aspettiamo!
+      </p>
+      <div class="flex justify-center">
+        <a
+          href="/lezione-di-prova"
+          class="inline-block bg-white text-primary font-semibold rounded-full border-2 border-transparent px-8 py-4 hover:bg-gray-100 transition-colors"
+        >
+          Prenota la lezione di prova
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
