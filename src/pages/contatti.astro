@@ -81,9 +81,10 @@ const metadata = {
       </div>
 
       <div class="md:col-span-3">
-        <div class="aspect-video w-full rounded-lg overflow-hidden shadow-md">
+        <div class="relative aspect-video w-full rounded-lg overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289750058024!2d15.103360611139898!3d37.52466652641178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313fd64ca27df0d%3A0x8dd72156baa02fe5!2sScherma%20Storica%20Catania%20-%20Sala%20d'armi%20Marea!5e0!3m2!1sit!2sit!4v1779377402121!5m2!1sit!2sit"
+            id="map-frame"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289750058024!2d15.103360611139898!3d37.52466652641178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1313fd64ca27df0d%3A0x8dd72156baa02fe5!2sScherma%20Storica%20Catania%20-%20Sala%20d'armi%20Marea!5e0!3m2!1sit!2sit!4v1779377402121!5m2!1sit!2sit"
             width="100%"
             height="100%"
             style="border:0;"
@@ -91,8 +92,30 @@ const metadata = {
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Mappa Sala d'armi Marea su Google Maps"></iframe>
+          <button
+            id="map-load-btn"
+            type="button"
+            class="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors cursor-pointer text-center px-6 font-sans"
+          >
+            <span class="font-semibold text-default dark:text-slate-200">Mostra la mappa</span>
+            <span class="text-sm text-muted dark:text-slate-400"
+              >La mappa è fornita da Google Maps e viene caricata solo al tuo clic.</span
+            >
+          </button>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    const mapBtn = document.getElementById('map-load-btn');
+    const mapFrame = document.getElementById('map-frame');
+    if (mapBtn instanceof HTMLButtonElement && mapFrame instanceof HTMLIFrameElement) {
+      mapBtn.addEventListener('click', () => {
+        const src = mapFrame.getAttribute('data-src');
+        if (src) mapFrame.src = src;
+        mapBtn.remove();
+      });
+    }
+  </script>
 </Layout>
