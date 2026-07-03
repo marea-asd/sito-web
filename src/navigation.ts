@@ -47,7 +47,7 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [],
+  secondaryLinks: [{ text: 'Informativa privacy', href: 'https://www.iubenda.com/privacy-policy/64525115' }],
   socialLinks: [
     {
       ariaLabel: 'Facebook',
