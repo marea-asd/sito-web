@@ -268,11 +268,6 @@ const metadata = {
           if (!response.ok) throw new Error('Request failed');
           form.classList.add('hidden');
           successEl?.classList.remove('hidden');
-          // Evento Lead per il Meta Pixel: scatta solo se il Pixel e' attivo,
-          // cioe' se c'e' stato il consenso marketing (altrimenti fbq non esiste).
-          if (typeof window.fbq === 'function') {
-            window.fbq('track', 'Lead');
-          }
         } catch {
           errorEl?.classList.remove('hidden');
           submitBtn.disabled = false;
