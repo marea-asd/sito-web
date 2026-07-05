@@ -11,6 +11,10 @@ export const headerData = {
       href: getPermalink('/corso-base'),
     },
     {
+      text: 'Corso regolare',
+      href: getPermalink('/corso-regolare'),
+    },
+    {
       text: 'Chi siamo',
       href: getPermalink('/chi-siamo'),
     },
@@ -31,6 +35,7 @@ export const footerData = {
       links: [
         { text: 'Home', href: getPermalink('/') },
         { text: 'Corso Base', href: getPermalink('/corso-base') },
+        { text: 'Corso regolare', href: getPermalink('/corso-regolare') },
         { text: 'Chi siamo', href: getPermalink('/chi-siamo') },
         { text: 'Contatti', href: getPermalink('/contatti') },
       ],
