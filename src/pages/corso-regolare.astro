@@ -1,5 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Image from '~/components/common/Image.astro';
+import { Image as FigureImage } from 'astro:assets';
+import armizare1 from '~/assets/images/armizare1.jpg';
+import armizare3 from '~/assets/images/armizare3.png';
 
 const metadata = {
   title: "Corso regolare di scherma storica a Catania | Sala d'armi Marea",
@@ -11,12 +15,23 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero *************************** -->
 
-  <section class="bg-white dark:bg-black not-prose">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
-      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-6">
+  <section class="relative bg-black not-prose overflow-hidden">
+    <Image
+      src="~/assets/images/corso-regolare.jpg"
+      alt=""
+      width={1794}
+      height={877}
+      widths={[640, 960, 1280, 1794]}
+      sizes="100vw"
+      loading="eager"
+      class="absolute inset-0 w-full h-full object-cover !object-top !max-w-none !max-h-none"
+    />
+    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-white mb-6">
         Un'arte antica, oggi di nuovo viva
       </h1>
-      <p class="font-sans text-xl text-muted dark:text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+      <p class="font-sans text-xl text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto">
         Inizia il percorso verso l'Arte di Armizare.
       </p>
       <a
@@ -30,40 +45,51 @@ const metadata = {
   <!-- L'antica arte di Armizare ***** -->
 
   <section class="bg-[#FAF6EE] dark:bg-slate-900 not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
       >
         L'antica arte di Armizare
       </h2>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          Il Fior di Battaglia di Fiore dei Liberi è il più antico trattato che ci sia giunto sull'arte marziale
-          sviluppatasi in tutta Europa tra Medioevo e Rinascimento. Una disciplina affascinante, codificata nei secoli,
-          che insegna a combattere in ogni condizione: con la lama, con l'asta, a mani nude, a piedi come a cavallo, in
-          duello come sul campo di battaglia.
-        </p>
-        <p>
-          Ma si può praticare la scherma storica rispettando davvero l'insegnamento dei grandi maestri? È quello che
-          facciamo nella Sala d'armi Marea, la prima sala di scherma storica in Sicilia. Ogni azione, ogni principio che
-          insegniamo nasce dallo studio attento delle fonti che ci sono arrivate dal passato.
-        </p>
-        <p>
-          Per la spada medievale, in particolare la spada a due mani, studiamo il Fior di Battaglia, scritto dal Maestro
-          friulano Fiore dei Liberi nel Quattrocento. Per la spada da lato del Cinquecento ci basiamo sull'Anonimo
-          Bolognese, capostipite della celebre scuola bolognese che annovera nomi come Achille Marozzo, Antonio
-          Manciolino e Giovanni Dall'Agocchie. Per la Striscia, la spada del periodo successivo, seguiamo il Gran
-          Simulacro dell'Arte e dell'Uso della Scherma, pubblicato a Siena nel 1600 da Ridolfo Capoferro.
-        </p>
-        <p>
-          Erano uomini forti, cavalieri e grandi maestri, depositari di una competenza rara. Il loro mestiere, l'arte
-          nel senso corporativo del termine, era il combattimento: per chi lo insegnava, l'obiettivo era formare
-          guerrieri capaci di dominare il campo e, prima di tutto, di sopravvivere.
-        </p>
-        <p>
-          È un sistema completo, sviluppato nell'arco di tre secoli: un'arte marziale unica e coerente, dove ogni forma
-          segue gli stessi principi universali.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={armizare1}
+            alt="Il Segno dei sette colpi e delle quattro virtù, dal Fior di Battaglia di Fiore dei Liberi"
+            widths={[400, 600, 900]}
+            sizes="(max-width: 767px) 80vw, 40vw"
+            class="mx-auto w-auto max-h-[26rem] rounded-lg shadow-md"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            Il Fior di Battaglia di Fiore dei Liberi è il più antico trattato che ci sia giunto sull'arte marziale
+            sviluppatasi in tutta Europa tra Medioevo e Rinascimento. Una disciplina affascinante, codificata nei
+            secoli, che insegna a combattere in ogni condizione: con la lama, con l'asta, a mani nude, a piedi come a
+            cavallo, in duello come sul campo di battaglia.
+          </p>
+          <p>
+            Ma si può praticare la scherma storica rispettando davvero l'insegnamento dei grandi maestri? È quello che
+            facciamo nella Sala d'armi Marea, la prima sala di scherma storica in Sicilia. Ogni azione, ogni principio
+            che insegniamo nasce dallo studio attento delle fonti che ci sono arrivate dal passato.
+          </p>
+          <p>
+            Per la spada medievale, in particolare la spada a due mani, studiamo il Fior di Battaglia, scritto dal
+            Maestro friulano Fiore dei Liberi nel Quattrocento. Per la spada da lato del Cinquecento ci basiamo
+            sull'Anonimo Bolognese, capostipite della celebre scuola bolognese che annovera nomi come Achille Marozzo,
+            Antonio Manciolino e Giovanni Dall'Agocchie. Per la Striscia, la spada del periodo successivo, seguiamo il
+            Gran Simulacro dell'Arte e dell'Uso della Scherma, pubblicato a Siena nel 1600 da Ridolfo Capoferro.
+          </p>
+          <p>
+            Erano uomini forti, cavalieri e grandi maestri, depositari di una competenza rara. Il loro mestiere, l'arte
+            nel senso corporativo del termine, era il combattimento: per chi lo insegnava, l'obiettivo era formare
+            guerrieri capaci di dominare il campo e, prima di tutto, di sopravvivere.
+          </p>
+          <p>
+            È un sistema completo, sviluppato nell'arco di tre secoli: un'arte marziale unica e coerente, dove ogni
+            forma segue gli stessi principi universali.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -114,22 +140,33 @@ const metadata = {
   <!-- Un allenamento che non si ferma -->
 
   <section class="bg-[#FAF6EE] dark:bg-slate-900 not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
       >
         Un allenamento che non si ferma
       </h2>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          Il corso regolare vive di continuità. Ci si allena tutto l'anno, in lezioni da un'ora e mezza, costruendo
-          abilità reale nel tempo. Ogni sessione è pratica condivisa: si cresce con i compagni, si onora l'arte, si
-          tramanda una disciplina viva.
-        </p>
-        <p>
-          Ogni percorso è strutturato e calibrato da chi ha una formazione in scienze motorie e preparazione atletica,
-          perché la crescita tecnica poggi su basi fisiche solide e sicure.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={armizare3}
+            alt="Xilografia rinascimentale di scherma"
+            widths={[300]}
+            sizes="(max-width: 767px) 55vw, 300px"
+            class="mx-auto w-auto max-h-80 rounded-lg shadow-md"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            Il corso regolare vive di continuità. Ci si allena tutto l'anno, in lezioni da un'ora e mezza, costruendo
+            abilità reale nel tempo. Ogni sessione è pratica condivisa: si cresce con i compagni, si onora l'arte, si
+            tramanda una disciplina viva.
+          </p>
+          <p>
+            Ogni percorso è strutturato e calibrato da chi ha una formazione in scienze motorie e preparazione atletica,
+            perché la crescita tecnica poggi su basi fisiche solide e sicure.
+          </p>
+        </div>
       </div>
     </div>
   </section>

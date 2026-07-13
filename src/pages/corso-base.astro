@@ -1,5 +1,9 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Image from '~/components/common/Image.astro';
+import { Image as FigureImage } from 'astro:assets';
+import figuraArmizare from '~/assets/images/figura-armizare.png';
+import figuraAllenamento from '~/assets/images/figura-allenamento.png';
 import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = {
@@ -12,12 +16,23 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero *************************** -->
 
-  <section class="bg-white dark:bg-black not-prose">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
-      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-6">
+  <section class="relative bg-black not-prose overflow-hidden">
+    <Image
+      src="~/assets/images/corso-base.jpg"
+      alt=""
+      width={1794}
+      height={877}
+      widths={[640, 960, 1280, 1794]}
+      sizes="100vw"
+      loading="eager"
+      class="absolute inset-0 w-full h-full object-cover !max-w-none !max-h-none"
+    />
+    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-white mb-6">
         Sei settimane per trasformarti in un vero cavaliere medievale!
       </h1>
-      <p class="font-sans text-xl text-muted dark:text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+      <p class="font-sans text-xl text-white/90 leading-relaxed mb-10 max-w-2xl mx-auto">
         Il Corso Base è la porta d'ingresso alla nostra magnifica disciplina, l'Arte della spada. Apprenderai a muoverti
         con una spada in mano, a usare le Poste del Trattato di Fiore dei Liberi, a portare con efficacia tagli e punte,
         fino al tuo primo duello.
@@ -25,9 +40,8 @@ const metadata = {
       <a
         href="/lezione-di-prova"
         class="inline-block bg-primary text-white font-semibold rounded-full px-8 py-4 hover:opacity-90 transition-opacity"
+        >Prenota la lezione di prova</a
       >
-        Prenota la lezione di prova
-      </a>
     </div>
   </section>
 
@@ -66,42 +80,54 @@ const metadata = {
   <!-- Cosa imparerai **************** -->
 
   <section class="bg-white dark:bg-black not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
       >
         Cosa imparerai
       </h2>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          Il Corso Base è un percorso completo ideale per tutti coloro che partono da zero. Sin dalla prima lezione non
-          viene dato nulla per scontato, nemmeno come si tiene una spada; alla fine delle sei settimane incroci per la
-          prima volta con un compagno, con un controllo reale del gesto.
-        </p>
-        <p>
-          Il primo passo è creare una connessione tra il corpo e la spada: l'impugnatura, la postura marziale, la
-          biomeccanica del movimento. Prima ancora di colpire imparerai a reggere la spada nel modo giusto, perché tutto
-          il resto nasce da lì. Da qui si passa al movimento, il passeggio, il modo in cui ci si sposta con equilibrio e
-          precisione.
-        </p>
-        <p>
-          Nel frattempo, inizierai ad apprendere l'Arte: le prime Poste del Trattato di Fiore dei Liberi, il Maestro su
-          cui si fonda la tradizione italiana della spada a due mani. Le Poste sono le guardie da cui nasce ogni azione,
-          le studierai direttamente dalla fonte per poi applicarle concretamente. Sulle Poste si fondano l'azione, i
-          tagli e le punte, il modo in cui la spada offende e come si costruisce un colpo che sia efficace e sicuro per
-          chi lo tira.
-        </p>
-        <p>
-          Nell'ultima parte del percorso arrivano la difesa e il confronto: le azioni difensive, lo studio pratico di
-          Tempo e Misura e l'introduzione agli Assalti liberi (lo sparring). È il momento in cui tutto quello che hai
-          costruito si mette alla prova con un compagno, con prudenza e in sicurezza.
-        </p>
-        <p>
-          Tutto questo lavoro ha un effetto sul corpo, non solo sulla tecnica. Muoversi con la spada allena la
-          coordinazione, il controllo della postura e la stabilità di core e articolazioni. Settimana dopo settimana la
-          nostra arte marziale ti aiuterà a sviluppare forza funzionale, equilibrio e resistenza. È il gesto marziale a
-          mettere in moto tutto il corpo, e impari a governarlo con precisione, stabilità, agilità e coraggio.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={figuraArmizare}
+            alt=""
+            widths={[400, 600, 900]}
+            sizes="(max-width: 767px) 75vw, 40vw"
+            class="mx-auto w-auto max-h-[26rem]"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            Il Corso Base è un percorso completo ideale per tutti coloro che partono da zero. Sin dalla prima lezione
+            non viene dato nulla per scontato, nemmeno come si tiene una spada; alla fine delle sei settimane incroci
+            per la prima volta con un compagno, con un controllo reale del gesto.
+          </p>
+          <p>
+            Il primo passo è creare una connessione tra il corpo e la spada: l'impugnatura, la postura marziale, la
+            biomeccanica del movimento. Prima ancora di colpire imparerai a reggere la spada nel modo giusto, perché
+            tutto il resto nasce da lì. Da qui si passa al movimento, il passeggio, il modo in cui ci si sposta con
+            equilibrio e precisione.
+          </p>
+          <p>
+            Nel frattempo, inizierai ad apprendere l'Arte: le prime Poste del Trattato di Fiore dei Liberi, il Maestro
+            su cui si fonda la tradizione italiana della spada a due mani. Le Poste sono le guardie da cui nasce ogni
+            azione, le studierai direttamente dalla fonte per poi applicarle concretamente. Sulle Poste si fondano
+            l'azione, i tagli e le punte, il modo in cui la spada offende e come si costruisce un colpo che sia efficace
+            e sicuro per chi lo tira.
+          </p>
+          <p>
+            Nell'ultima parte del percorso arrivano la difesa e il confronto: le azioni difensive, lo studio pratico di
+            Tempo e Misura e l'introduzione agli Assalti liberi (lo sparring). È il momento in cui tutto quello che hai
+            costruito si mette alla prova con un compagno, con prudenza e in sicurezza.
+          </p>
+          <p>
+            Tutto questo lavoro ha un effetto sul corpo, non solo sulla tecnica. Muoversi con la spada allena la
+            coordinazione, il controllo della postura e la stabilità di core e articolazioni. Settimana dopo settimana
+            la nostra arte marziale ti aiuterà a sviluppare forza funzionale, equilibrio e resistenza. È il gesto
+            marziale a mettere in moto tutto il corpo, e impari a governarlo con precisione, stabilità, agilità e
+            coraggio.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -131,30 +157,41 @@ const metadata = {
   <!-- Come si svolge e cosa portare * -->
 
   <section class="bg-white dark:bg-black not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
       >
         Come si svolge e cosa portare
       </h2>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          Le lezioni si tengono nella nostra Sala in Via Grasso Finocchiaro, due volte a settimana. Ogni incontro dura
-          un'ora e alterna la spiegazione, l'esercizio guidato e la pratica.
-        </p>
-        <p>
-          Per cominciare ti serve pochissimo: vieni con un abbigliamento sportivo comodo e un paio di scarpe da
-          ginnastica.
-        </p>
-        <p>Ai simulacri pensiamo noi: le spade da allenamento le mette a disposizione la scuola.</p>
-        <p>
-          L'unico documento da preparare in anticipo è il certificato medico di idoneità all'attività sportiva non
-          agonistica (quello ludico-motorio non è sufficiente) che va presentato prima di iniziare il corso.
-        </p>
-        <p>
-          Se un domani vorrai gareggiare potrai fare liberamente anche il certificato agonistico, ma per il Corso Base
-          quello non agonistico è sufficiente.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={figuraAllenamento}
+            alt=""
+            widths={[400, 600, 900]}
+            sizes="(max-width: 767px) 75vw, 40vw"
+            class="mx-auto w-auto max-h-[26rem]"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            Le lezioni si tengono nella nostra Sala in Via Grasso Finocchiaro, due volte a settimana. Ogni incontro dura
+            un'ora e alterna la spiegazione, l'esercizio guidato e la pratica.
+          </p>
+          <p>
+            Per cominciare ti serve pochissimo: vieni con un abbigliamento sportivo comodo e un paio di scarpe da
+            ginnastica.
+          </p>
+          <p>Ai simulacri pensiamo noi: le spade da allenamento le mette a disposizione la scuola.</p>
+          <p>
+            L'unico documento da preparare in anticipo è il certificato medico di idoneità all'attività sportiva non
+            agonistica (quello ludico-motorio non è sufficiente) che va presentato prima di iniziare il corso.
+          </p>
+          <p>
+            Se un domani vorrai gareggiare potrai fare liberamente anche il certificato agonistico, ma per il Corso Base
+            quello non agonistico è sufficiente.
+          </p>
+        </div>
       </div>
     </div>
   </section>

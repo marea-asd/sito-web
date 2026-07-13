@@ -1,54 +1,133 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Hero from '~/components/widgets/Hero.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import { Image as FigureImage } from 'astro:assets';
+import figuraHome from '~/assets/images/figura-home.png';
 ---
 
 <Layout>
-  <!-- Hero Widget ******************* -->
+  <!-- Hero *************************** -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Prenota la lezione di prova',
-        href: '/lezione-di-prova',
-      },
-      { text: 'Scopri il Corso Base', href: '/corso-base' },
-    ]}
-  >
-    <Fragment slot="title">Sala d'armi Marea</Fragment>
+  <section id="hero" class="relative bg-white dark:bg-black not-prose overflow-hidden">
+    <div
+      id="hero-content"
+      class="opacity-0 dark:opacity-100 transition-opacity duration-700 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center"
+    >
+      <h1
+        class="text-6xl md:text-7xl lg:text-8xl font-medium leading-tight mb-6 font-display text-heading dark:text-white"
+      >
+        Sala d'armi Marea
+      </h1>
 
-    <Fragment slot="subtitle">Scherma storica medievale e rinascimentale a Catania</Fragment>
-  </Hero>
+      <p class="font-sans text-xl text-muted dark:text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
+        Scherma storica medievale e rinascimentale a Catania
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/lezione-di-prova"
+          class="inline-block bg-primary text-white font-semibold rounded-full px-8 py-4 hover:opacity-90 transition-opacity"
+          >Prenota la lezione di prova</a
+        >
+        <a
+          href="/corso-base"
+          class="inline-block border-2 border-primary text-primary font-semibold rounded-full px-8 py-4 hover:bg-primary hover:text-white transition-colors dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+          >Scopri il Corso Base</a
+        >
+      </div>
+    </div>
+
+    <div
+      id="hero-intro"
+      class="absolute inset-0 z-20 flex items-center justify-center bg-white transition-opacity duration-700 dark:hidden"
+    >
+      <video id="hero-video" class="w-full max-w-3xl" autoplay muted playsinline>
+        <source src="/home-logo.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <noscript>
+      <style>
+        #hero-content {
+          opacity: 1;
+        }
+        #hero-intro {
+          display: none;
+        }
+      </style>
+    </noscript>
+
+    <script>
+      function setupHeroIntro() {
+        const content = document.getElementById('hero-content');
+        const intro = document.getElementById('hero-intro');
+        const video = document.getElementById('hero-video');
+        if (!content || !intro || !(video instanceof HTMLVideoElement)) return;
+        if (document.documentElement.classList.contains('dark')) return;
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          content.style.opacity = '1';
+          intro.style.display = 'none';
+          return;
+        }
+        const contentEl = content;
+        const introEl = intro;
+        let done = false;
+        function reveal() {
+          if (done) return;
+          done = true;
+          contentEl.style.opacity = '1';
+          introEl.style.opacity = '0';
+          setTimeout(function () {
+            introEl.style.display = 'none';
+          }, 800);
+        }
+        video.addEventListener('ended', reveal, { once: true });
+        video.addEventListener('error', reveal, { once: true });
+        setTimeout(reveal, 6000);
+        const p = video.play();
+        if (p && typeof p.catch === 'function') p.catch(reveal);
+      }
+      document.addEventListener('astro:page-load', setupHeroIntro);
+    </script>
+  </section>
 
   <!-- Perché Marea ****************** -->
 
   <section class="bg-[#FAF6EE] dark:bg-slate-900 not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-8 text-center"
       >
         L'arte della spada è una cosa seria
       </h2>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          La scherma storica praticata nella nostra Sala d'armi, la prima in Sicilia, è lo studio e la pratica delle
-          azioni di combattimento con la spada tramandate dai trattati dei grandi Maestri del medioevo e del
-          Rinascimento. La tradizione italiana di Fiore dei Liberi, letta alla fonte.
-        </p>
-        <p>
-          La ricostruzione di quest'Arte, perduta secoli orsono, è affidata alla sperimentazione tecnica e alla ricerca
-          storica. Entrambe queste attività vengono svolte nella Sala Marea con il rigore scientifico e professionale di
-          chi si impegna costantemente nella ricerca scientifica sia storica sia tecnica e motoria.
-        </p>
-        <p>
-          Rigore storico e competenza tecnica, nella stessa persona. La sua storia in <a
-            href="/chi-siamo"
-            class="underline underline-offset-4 hover:text-primary transition-colors">Chi siamo</a
-          >.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={figuraHome}
+            alt=""
+            widths={[400, 600, 900]}
+            sizes="(max-width: 767px) 75vw, 40vw"
+            class="mx-auto w-auto max-h-[26rem]"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            La scherma storica praticata nella nostra Sala d'armi, la prima in Sicilia, è lo studio e la pratica delle
+            azioni di combattimento con la spada tramandate dai trattati dei grandi Maestri del medioevo e del
+            Rinascimento. La tradizione italiana di Fiore dei Liberi, letta alla fonte.
+          </p>
+          <p>
+            La ricostruzione di quest'Arte, perduta secoli orsono, è affidata alla sperimentazione tecnica e alla
+            ricerca storica. Entrambe queste attività vengono svolte nella Sala Marea con il rigore scientifico e
+            professionale di chi si impegna costantemente nella ricerca scientifica sia storica sia tecnica e motoria.
+          </p>
+          <p>
+            Rigore storico e competenza tecnica, nella stessa persona. La sua storia in <a
+              href="/chi-siamo"
+              class="underline underline-offset-4 hover:text-primary transition-colors">Chi siamo</a
+            >.
+          </p>
+        </div>
       </div>
     </div>
   </section>

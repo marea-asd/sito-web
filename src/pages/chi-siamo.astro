@@ -1,5 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Image from '~/components/common/Image.astro';
+import { Image as FigureImage } from 'astro:assets';
+import fondatoreImg from '~/assets/images/fondatore.png';
 
 const metadata = {
   title: "Chi siamo — Sala d'armi Marea",
@@ -11,12 +14,21 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero *************************** -->
 
-  <section class="bg-white dark:bg-black not-prose">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24 text-center">
-      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-6">
-        Chi siamo
-      </h1>
-      <p class="font-sans text-xl text-muted dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+  <section class="relative bg-black not-prose overflow-hidden">
+    <Image
+      src="~/assets/images/chi-siamo.jpg"
+      alt=""
+      width={1794}
+      height={877}
+      widths={[640, 960, 1280, 1794]}
+      sizes="100vw"
+      loading="eager"
+      class="absolute inset-0 w-full h-full object-cover !object-top !max-w-none !max-h-none"
+    />
+    <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-white mb-6">Chi siamo</h1>
+      <p class="font-sans text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
         La prima scuola di scherma storica medievale e rinascimentale in Sicilia, dal 2020.
       </p>
     </div>
@@ -92,47 +104,58 @@ const metadata = {
   <!-- Il fondatore ***************** -->
 
   <section class="bg-[#FAF6EE] dark:bg-slate-900 not-prose">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-3 text-center"
       >
         Fondatore, Magister e Responsabile operativo
       </h2>
       <p class="font-display uppercase tracking-wider text-primary text-center mb-10">Giuseppe A. Pioletti</p>
-      <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
-        <p>
-          Giuseppe pratica arti marziali dal 1995. Ha cominciato con le discipline orientali, e per anni ha cercato in
-          esse qualcosa che sentiva mancare: una storia che fosse anche la sua. L'ha trovata nel 2013, quando si è
-          avvicinato alla scherma medievale nei contesti rievocativi.
-        </p>
-        <p>
-          Questa passione lo ha portato nel 2020 a fondare, in collaborazione con CSEN, la prima sala di Scherma storica
-          in Sicilia: Sala Marea.
-        </p>
-        <p>
-          Il suo dottorato di ricerca in Storia e la laurea in Scienze Motorie, con Master in Posturologia e
-          Biomeccanica, gli hanno fornito gli strumenti per creare un ponte tra due mondi. Da un lato il rigore per
-          leggere e interpretare i trattati di combattimento medievali e rinascimentali; dall'altro la competenza
-          tecnica e biomeccanica per capire come quei gesti funzionino davvero nel corpo.
-        </p>
-        <p>
-          La sua attività di ricerca e il suo insegnamento si basano sull'interpretazione della trattatistica italiana
-          del medioevo e del rinascimento, fondata sulla coerenza storica e biomeccanica. È qui che le sue due grandi
-          passioni si incontrano, il ruolo di allenatore e posturologo e l'impegno nella ricerca storica e filosofica,
-          perché le tecniche tramandate dai grandi Maestri del passato incarnano l'essenza di un allenamento davvero
-          funzionale.
-        </p>
-        <p>
-          I loro trattati, scritti per praticanti adulti, custodiscono un patrimonio immenso di conoscenze fisiche e
-          biomeccaniche, pensate per insegnare un movimento sano, efficace e armonioso: esattamente ciò che serve per
-          mantenere un corpo forte lungo tutto l'arco della vita.
-        </p>
-        <p>
-          Come fondatore di Sala Marea, Giuseppe si occupa della gestione e del coordinamento delle attività didattiche,
-          sportive e della comunicazione. Ma prima di ogni ruolo, resta un praticante e un ricercatore, mosso dalla
-          stessa convinzione di sempre: che studiare l'Arte dei Maestri significhi, insieme, custodire la nostra storia
-          e diffondere un autentico benessere, fisico e mentale.
-        </p>
+      <div class="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-start">
+        <div class="md:sticky md:top-24">
+          <FigureImage
+            src={fondatoreImg}
+            alt="Giuseppe Pioletti"
+            widths={[400, 600, 1198]}
+            sizes="(max-width: 767px) 75vw, 40vw"
+            class="mx-auto w-auto max-h-[26rem]"
+          />
+        </div>
+        <div class="space-y-6 font-sans text-lg leading-relaxed text-default dark:text-slate-300">
+          <p>
+            Giuseppe pratica arti marziali dal 1995. Ha cominciato con le discipline orientali, e per anni ha cercato in
+            esse qualcosa che sentiva mancare: una storia che fosse anche la sua. L'ha trovata nel 2013, quando si è
+            avvicinato alla scherma medievale nei contesti rievocativi.
+          </p>
+          <p>
+            Questa passione lo ha portato nel 2020 a fondare, in collaborazione con CSEN, la prima sala di Scherma
+            storica in Sicilia: Sala Marea.
+          </p>
+          <p>
+            Il suo dottorato di ricerca in Storia e la laurea in Scienze Motorie, con Master in Posturologia e
+            Biomeccanica, gli hanno fornito gli strumenti per creare un ponte tra due mondi. Da un lato il rigore per
+            leggere e interpretare i trattati di combattimento medievali e rinascimentali; dall'altro la competenza
+            tecnica e biomeccanica per capire come quei gesti funzionino davvero nel corpo.
+          </p>
+          <p>
+            La sua attività di ricerca e il suo insegnamento si basano sull'interpretazione della trattatistica italiana
+            del medioevo e del rinascimento, fondata sulla coerenza storica e biomeccanica. È qui che le sue due grandi
+            passioni si incontrano, il ruolo di allenatore e posturologo e l'impegno nella ricerca storica e filosofica,
+            perché le tecniche tramandate dai grandi Maestri del passato incarnano l'essenza di un allenamento davvero
+            funzionale.
+          </p>
+          <p>
+            I loro trattati, scritti per praticanti adulti, custodiscono un patrimonio immenso di conoscenze fisiche e
+            biomeccaniche, pensate per insegnare un movimento sano, efficace e armonioso: esattamente ciò che serve per
+            mantenere un corpo forte lungo tutto l'arco della vita.
+          </p>
+          <p>
+            Come fondatore di Sala Marea, Giuseppe si occupa della gestione e del coordinamento delle attività
+            didattiche, sportive e della comunicazione. Ma prima di ogni ruolo, resta un praticante e un ricercatore,
+            mosso dalla stessa convinzione di sempre: che studiare l'Arte dei Maestri significhi, insieme, custodire la
+            nostra storia e diffondere un autentico benessere, fisico e mentale.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -155,9 +178,7 @@ const metadata = {
             umano. Se cercate una sala di scherma storica degna dell'importanza e del rispetto che essa merita, Marea fa
             per voi."
           </blockquote>
-          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">
-            Manuel, ricercatore
-          </figcaption>
+          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">Manuel S.</figcaption>
         </figure>
         <figure class="rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 p-6 sm:p-8">
           <blockquote class="font-sans text-lg leading-relaxed text-default dark:text-slate-300">
@@ -169,9 +190,7 @@ const metadata = {
             'cavalieri mancati' e vorreste imparare a usare una spada come si deve (che sia sola, a due mani, col
             brocchiero oltre che magari anche una daga o addirittura un'azza!) questo è il posto giusto per voi! ⚔️"
           </blockquote>
-          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">
-            Riccardo Di Marco
-          </figcaption>
+          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">Riccardo D.M.</figcaption>
         </figure>
         <figure class="rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 p-6 sm:p-8">
           <blockquote class="font-sans text-lg leading-relaxed text-default dark:text-slate-300">
@@ -183,9 +202,7 @@ const metadata = {
             (perché così si definisce e si dimostra) è un vostro sogno, questo è il posto giusto. Arte, Ardore, Onore e
             Rispetto sarà quello che troverete e vi verrà dato!"
           </blockquote>
-          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">
-            Federico Schiavino
-          </figcaption>
+          <figcaption class="mt-4 font-display uppercase tracking-wider text-primary text-sm">Federico S.</figcaption>
         </figure>
       </div>
     </div>
