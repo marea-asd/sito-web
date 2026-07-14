@@ -1,34 +1,30 @@
 site:
   name: "Sala d'armi Marea"
-  site: 'https://astrowind.vercel.app'
+  site: 'https://saladarmimarea.it'
   base: '/'
   trailingSlash: false
-
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: "Scherma storica Catania — Sala d'armi Marea"
-    template: "%s — Sala d'armi Marea"
+    default: 'Scherma storica Catania'
+    template: "%s | Sala d'armi Marea"
   description: 'La prima scuola di scherma storica in Sicilia. Spada medievale e rinascimentale, HEMA, CSEN, CONI. Catania, via Grasso Finocchiaro 63.'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: "Sala d'armi Marea"
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: it
   textDirection: ltr
 
 apps:
