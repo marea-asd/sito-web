@@ -130,14 +130,16 @@ const metadata = {
   </section>
 
   <script>
-    const mapBtn = document.getElementById('map-load-btn');
-    const mapFrame = document.getElementById('map-frame');
-    if (mapBtn instanceof HTMLButtonElement && mapFrame instanceof HTMLIFrameElement) {
-      mapBtn.addEventListener('click', () => {
-        const src = mapFrame.getAttribute('data-src');
-        if (src) mapFrame.src = src;
-        mapBtn.remove();
-      });
-    }
+    document.addEventListener('astro:page-load', () => {
+      const mapBtn = document.getElementById('map-load-btn');
+      const mapFrame = document.getElementById('map-frame');
+      if (mapBtn instanceof HTMLButtonElement && mapFrame instanceof HTMLIFrameElement) {
+        mapBtn.addEventListener('click', () => {
+          const src = mapFrame.getAttribute('data-src');
+          if (src) mapFrame.src = src;
+          mapBtn.remove();
+        });
+      }
+    });
   </script>
 </Layout>
