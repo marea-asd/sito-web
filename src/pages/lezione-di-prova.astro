@@ -247,55 +247,60 @@ const metadata = {
   </section>
 
   <script>
-    const form = document.getElementById('waitlist-form');
-    const successEl = document.getElementById('form-success');
-    const errorEl = document.getElementById('form-error');
-    const mismatchEl = document.getElementById('email-mismatch');
-    const submitBtn = document.getElementById('submit-btn');
+    document.addEventListener('astro:page-load', () => {
+      const form = document.getElementById('waitlist-form');
+      const successEl = document.getElementById('form-success');
+      const errorEl = document.getElementById('form-error');
+      const mismatchEl = document.getElementById('email-mismatch');
+      const submitBtn = document.getElementById('submit-btn');
 
-    if (form instanceof HTMLFormElement && submitBtn instanceof HTMLButtonElement) {
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        errorEl?.classList.add('hidden');
-        mismatchEl?.classList.add('hidden');
+      if (form instanceof HTMLFormElement && submitBtn instanceof HTMLButtonElement) {
+        if (form.dataset.bound === 'true') return;
+        form.dataset.bound = 'true';
 
-        const formData = new FormData(form);
-        const email = String(formData.get('email') || '').trim();
-        const confermaEmail = String(formData.get('confermaEmail') || '').trim();
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          errorEl?.classList.add('hidden');
+          mismatchEl?.classList.add('hidden');
 
-        if (email !== confermaEmail) {
-          mismatchEl?.classList.remove('hidden');
-          return;
-        }
+          const formData = new FormData(form);
+          const email = String(formData.get('email') || '').trim();
+          const confermaEmail = String(formData.get('confermaEmail') || '').trim();
 
-        const payload = {
-          nome: String(formData.get('nome') || '').trim(),
-          cognome: String(formData.get('cognome') || '').trim(),
-          email,
-          telefono: String(formData.get('telefono') || '').trim(),
-          consenso: formData.get('consenso') === 'on',
-        };
+          if (email !== confermaEmail) {
+            mismatchEl?.classList.remove('hidden');
+            return;
+          }
 
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Invio in corso...';
+          const payload = {
+            nome: String(formData.get('nome') || '').trim(),
+            cognome: String(formData.get('cognome') || '').trim(),
+            email,
+            telefono: String(formData.get('telefono') || '').trim(),
+            consenso: formData.get('consenso') === 'on',
+          };
 
-        try {
-          const response = await fetch('/api/waitlist', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          if (!response.ok) throw new Error('Request failed');
-          form.classList.add('hidden');
-          document.getElementById('form-heading')?.classList.add('hidden');
-          document.getElementById('form-intro')?.classList.add('hidden');
-          successEl?.classList.remove('hidden');
-        } catch {
-          errorEl?.classList.remove('hidden');
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Avvisami';
-        }
-      });
-    }
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Invio in corso...';
+
+          try {
+            const response = await fetch('/api/waitlist', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            });
+            if (!response.ok) throw new Error('Request failed');
+            form.classList.add('hidden');
+            document.getElementById('form-heading')?.classList.add('hidden');
+            document.getElementById('form-intro')?.classList.add('hidden');
+            successEl?.classList.remove('hidden');
+          } catch {
+            errorEl?.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Avvisami';
+          }
+        });
+      }
+    });
   </script>
 </Layout>
