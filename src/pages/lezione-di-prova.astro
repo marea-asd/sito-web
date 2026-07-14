@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: "Lezione di prova gratuita | Sala d'armi Marea",
@@ -124,10 +125,11 @@ const metadata = {
     <div class="max-w-xl mx-auto px-4 sm:px-6 py-12 md:py-20">
       <h2
         class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-4 text-center"
+        id="form-heading"
       >
         Avvisami del prossimo Open Day
       </h2>
-      <p class="font-sans text-lg text-muted dark:text-slate-300 leading-relaxed mb-8 text-center">
+      <p id="form-intro" class="font-sans text-lg text-muted dark:text-slate-300 leading-relaxed mb-8 text-center">
         Lascia i tuoi contatti e ti scriviamo appena è fissata la data del prossimo Open Day.
       </p>
 
@@ -227,10 +229,18 @@ const metadata = {
         </p>
       </form>
 
-      <div id="form-success" class="hidden text-center font-sans">
-        <p class="text-lg text-default dark:text-slate-200 leading-relaxed">
-          Ci siamo. Abbiamo ricevuto i tuoi contatti e ti scriviamo appena è fissata la data del prossimo Open Day. A
-          presto!
+      <div id="form-success" class="hidden text-center">
+        <div
+          class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#E6B636]"
+          aria-hidden="true"
+        >
+          <Icon name="tabler:check" class="h-8 w-8 text-white" />
+        </div>
+        <h2 class="font-heading text-4xl md:text-5xl font-medium leading-tight text-heading dark:text-white mb-4">
+          Ci siamo!
+        </h2>
+        <p class="font-sans text-lg text-muted dark:text-slate-300 leading-relaxed">
+          Abbiamo ricevuto i tuoi contatti e ti scriviamo appena è fissata la data del prossimo Open Day. A presto!
         </p>
       </div>
     </div>
@@ -277,6 +287,8 @@ const metadata = {
           });
           if (!response.ok) throw new Error('Request failed');
           form.classList.add('hidden');
+          document.getElementById('form-heading')?.classList.add('hidden');
+          document.getElementById('form-intro')?.classList.add('hidden');
           successEl?.classList.remove('hidden');
         } catch {
           errorEl?.classList.remove('hidden');
