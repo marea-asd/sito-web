@@ -1,0 +1,20 @@
+# Fine-riga: normalizza a LF nel repository e nel working tree.
+# Allinea git a .editorconfig (end_of_line = lf) e a Prettier (default LF),
+# eliminando i "fantasmi" CRLF su Windows (core.autocrlf=true).
+* text=auto eol=lf
+
+# Binari: git non deve toccarne i byte.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+*.webm binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.eot binary
+*.pdf binary
